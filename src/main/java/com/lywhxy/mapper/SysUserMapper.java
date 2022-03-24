@@ -13,6 +13,6 @@ public interface SysUserMapper {
 
 	int deleteSysUser(int id);
 
-	//List<Sys_user> selectSysUser();
-
+	//根据id查询单个用户
+	Sys_user selectOneSysUser(int id);
 }
