@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lywhxy.mapper.SysUserMapper">
+	<insert id="addSysUser" parameterType="Sys_user"
+			useGeneratedKeys="true" keyProperty="user_id">
+--  		keyProperty="user_id" 生成的主键赋值给对象的那个属性
+		insert into
+		sys_user(user_code, user_name, user_password, user_state)
+		VALUES(#{user_code}, #{user_name}, #{user_password}, #{user_state})
+	</insert>
+
+<!--	int updateSysUser(Sys_user sys_user);-->
+	<update id="updateSysUser" parameterType="Sys_user">
+		update sys_user
+		set user_code = #{user_code}, user_name = #{user_name},
+		    user_password = #{user_password}
+		where user_id = #{user_id}
+	</update>
+	<select id="selectSysUser"
+		resultType="Sys_user">
+		select * from sys_user
+	</select>
+</mapper>
