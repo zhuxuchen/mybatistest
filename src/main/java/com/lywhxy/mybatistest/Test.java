@@ -41,7 +41,14 @@ public class Test {
 		session.close();
 	}
 	public static void deleteSysUser() {
-		
+		System.out.println("----deleteSysUser----");
+		SqlSession session = MybatisUtils.getSqlSession();
+		SysUserMapper mapper = session.getMapper(SysUserMapper.class);
+		int row = mapper.deleteSysUser(3);
+		System.out.println("Row:" + row);
+		session.commit();
+		session.close();
+		System.out.println("=======deleteSysUser======");
 	}
 	public static void selectOneSysUser() {
 		
@@ -50,6 +57,7 @@ public class Test {
 	
 	public static void main(String[] args) throws IOException {	     
 		//addSysUser();
-		modifySysUser();
+		//modifySysUser();
+		deleteSysUser();
 	}
 }

@@ -28,5 +28,5 @@
 			4、接口中的方法名与mapper中的操作id一致，方法的输入、输入与操作保持一致。
 	     -->
 	    <package name="com.lywhxy.mapper"/>
-	</mappers>	
+	</mappers>
 </configuration>

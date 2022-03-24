@@ -17,6 +17,12 @@
 		    user_password = #{user_password}
 		where user_id = #{user_id}
 	</update>
+
+<!--	int deleteSysUser(int id);-->
+	<delete id="deleteSysUser" parameterType="int">
+		delete from sys_user where user_id = #{user_id}
+	</delete>
+
 	<select id="selectSysUser"
 		resultType="Sys_user">
 		select * from sys_user
